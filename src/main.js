@@ -25,8 +25,10 @@ $(document).ready(function() {
 
       let getElements = function(response) {
         console.log(response);
+        response.data.forEach(function(practice){
         $('.showDoctors').append(`<h1>Your search results for ${doctor}: </h1>`);
-        $('.showDoctors').append(`<p>${response.data.profile}</p>`)
+        $('.showDoctors').append(`<p>${practice.profile.first_name}</p>`)
+      });
       }
   });
 });
